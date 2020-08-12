@@ -67,9 +67,9 @@ for count, image in enumerate(os.listdir(test_dir)):
 
     # draw the bounding box around the faces with their detected names
     for ((top, right, bottom, left), name) in zip(bboxes, names):
-        
+
         cv2.rectangle(testimage, (left, top), (right, bottom), (0, 255, 0), 2)
-        cv2.putText(testimage, name, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+        cv2.putText(testimage, name, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
         if name != 'Unknown':
             filemap[name].append(filename)
 
